@@ -1,0 +1,5 @@
+root - INFO - Testinr perform_eda: SUCCESS
+root - INFO - Testing encoder_helper: SUCCESS
+root - INFO - Testing evaluate_model: SUCCESS
+root - INFO - Testing import_data: SUCCESS
+root - INFO - Testing perform_feature_engineering: SUCCESS
