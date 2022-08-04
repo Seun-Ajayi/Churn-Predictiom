@@ -7,6 +7,7 @@ Date: July 2022
 
 import os
 from dataclasses import dataclass
+from statistics import mean
 from typing import List, Dict, Tuple, Any
 
 from pandas import DataFrame
@@ -23,7 +24,7 @@ import seaborn as sns
 
 from src.plots import _plot_churn_hist
 from src.plots import _plot_customer_age_hist
-from src.plots import _plot_marital_status_hist
+from src.plots import _plot_marital_status_barchart
 from src.plots import _plot_total_trans_ct_dist
 from src.plots import _plot_correlation
 
@@ -95,8 +96,8 @@ class ChurnModel:
                 'Churn-Histogram.jpg'))
         _plot_customer_age_hist(temp, os.path.join(
             self.eda_output_dir, 'Customer-Age-Histogram.jpg'))
-        _plot_marital_status_hist(temp, os.path.join(
-            self.eda_output_dir, 'Marital-Status-Histogram.jpg'))
+        _plot_marital_status_barchart(temp, os.path.join(
+            self.eda_output_dir, 'Marital-Status-BarChart.jpg'))
         _plot_total_trans_ct_dist(temp, os.path.join(
             self.eda_output_dir, 'Total-Trans-Ct-DistPlot.jpg'))
         _plot_correlation(
@@ -129,7 +130,7 @@ class ChurnModel:
 
         for column in self.category_lst:
             lst = []
-            groups = data.groupby(data[column]).mean()['Churn']
+            groups = data.groupby(data[column])['Churn'].transform('mean')
 
             for val in data[column]:
                 lst.append(groups.loc[val])

@@ -87,7 +87,7 @@ class ChurnModelTest(TestCase):
 
     @patch('src.churn_library._plot_correlation')
     @patch('src.churn_library._plot_total_trans_ct_dist')
-    @patch('src.churn_library._plot_marital_status_hist')
+    @patch('src.churn_library._plot_marital_status_barchart')
     @patch('src.churn_library._plot_customer_age_hist')
     @patch('src.churn_library._plot_churn_hist')
     def test_eda(

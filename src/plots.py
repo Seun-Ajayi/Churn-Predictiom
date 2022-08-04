@@ -61,7 +61,7 @@ def _plot_customer_age_hist(data, img_pth):
     plt.close()
 
 
-def _plot_marital_status_hist(data, img_pth):
+def _plot_marital_status_barchart(data, img_pth):
     """ plot bar chart showing the normalised 'Marital_Stasus' distribution and
     save to file
 
