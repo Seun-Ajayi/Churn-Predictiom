@@ -48,6 +48,7 @@ Five interesting plots are generated durint the EDA;
 - An histogram showing the `Churn` disturbution 
 - An histogram showing the `Customer_Age` distribution
 - A barchart showing the `Marital_Status` distribution
+- A density+histogram plot showing `Total Transactions Completed`
 - And an `Heatmap` showing the correlation betweeen all features
 The functions that creates individual plots are housed in a different script [plots.py](src/plots.py) for modularity and the function are imported in the method `perform_eda` in the `ChurnModel` class. The plots generated are saved in the [images/eda](images) directory, soke of the plots are shown below;
 #### Correlation Heatmap
