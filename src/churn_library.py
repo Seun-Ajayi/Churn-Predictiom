@@ -44,8 +44,13 @@ class ChurnModel:
         categorical features, feature engineering to training and testing the model
         and storing outputs in images files.
 
-        input:
+        Intialization inputs:
                 data_pth: dataset path
+                eda_output_dir: directory to store EDA plots
+                results_output_dir: directory to store model evaluation results
+                model_dir: directory to trained models
+                category_lst: List containing categorical variables
+                drop_cols: List containing features to drop from train data
     """
 
     data_pth: str = None
@@ -60,7 +65,7 @@ class ChurnModel:
         returns dataframe for the csv found at pth and create target feature
 
         input:
-                pth: a path to the csv
+                self.data_pth: a path to the csv
         output:
                 data: pandas dataframe
         '''
@@ -81,7 +86,7 @@ class ChurnModel:
         perform eda on df and save figures to images folder
         input:
                 data: pandas dataframe
-                output_dir: folder path to save EDA plots
+                self.output_dir: folder path to save EDA plots
 
         output:
                 None
